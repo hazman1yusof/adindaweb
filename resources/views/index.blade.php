@@ -4,7 +4,7 @@
 <!-- Slider Container -->
 <div class="ui fluid container slider">
 	<div class="owl-carousel" id="single-slider">
-	    <div class="item"><img src="img/1000x400.png"></div>
+	    <div class="item"><img src="img/nah.jpg"></div>
 	    <div class="item"><img src="img/1000x400.png"></div>
 	    <div class="item"><img src="img/1000x400.png"></div>
 	    <div class="item"><img src="img/1000x400.png"></div>

@@ -8,6 +8,7 @@
 		<div class="sixteen wide column">
 			<div class="ui horizontal divider"><h2>About</h2></div>
 			<div align="center">
+				<div class="ui heart rating" data-rating="1" data-max-rating="3"></div>
 				<p><b>Moderns Template</b> adalah free template siap pakai yang saya buat untuk di pakai, di modifikasi, dan di share kepada siapapun tetapi dengan tetap menyertakan alamat dan pembuat asli dari template ini yaitu saya sendiri di dalam file index, license, atau lainnya. Semoga template ini dapat berguna untuk anda sekalian. Terima kasih karena telah menggunakan template ini.</p>
 				<blockquote><h3>"Berkarya, Bersama, Berjaya"</h3></blockquote>
 			</div>
@@ -38,4 +39,8 @@
 		</div>
 	</div>
 </div>
+@endsection
+
+@section('js')
+	<script src="js/about.js"></script>
 @endsection

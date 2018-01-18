@@ -1,6 +1,10 @@
 /* Color Variable */
 /* Function Variable */
 /* Header Area */
+  
+.ui.container{
+  margin-top: 35px;
+}
 .ui.fixed.top.menu {
   top: 5px;
   justify-content: center;

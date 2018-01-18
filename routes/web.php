@@ -17,8 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/index', 'HomeController@index')->name('home');
+
+Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
 Route::get('/about', 'AboutController@index');
 Route::get('/blog', 'BlogController@index');
-Route::get('/portfolio', 'PortfolioController@index');
-
+Route::get('/product', 'ProductController@index');
+Route::get('/product/{id}', 'ProductController@showDetail');

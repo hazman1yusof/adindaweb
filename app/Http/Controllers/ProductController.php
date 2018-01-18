@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PortfolioController extends Controller
+class ProductController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +23,11 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        return view('portfolio');
+        return view('productList');
+    }
+
+    public function showDetail()
+    {
+        return view('detailProduct');
     }
 }
