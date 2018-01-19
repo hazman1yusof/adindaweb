@@ -3,6 +3,19 @@
 @section('content')
 <!-- Content area -->
 <div class="ui container content">
+	<div class="ui column">
+		<div class="item">
+			<div class="ui breadcrumb">
+		  		<a class="section" href="/product">Products</a>
+			</div>
+		</div>
+		<div class="item">
+			<div class="ui breadcrumb">
+		  		<a class="section" href="/product">Products</a>
+			</div>
+		</div>
+	</div>
+
 	<div class="ui four stackable cards">
 
 	  <div class="ui raised link card">
@@ -47,7 +60,7 @@
 	    </div>
 	    <div class="content">
 	      <div class="header">
-	      	<a class="group">Product Name</a>
+	      	<a class="group" href="product/2">Product Name</a>
 	      </div>
 	      <div class="meta">
 	        Category
@@ -76,7 +89,7 @@
 	    </div>
 	    <div class="content">
 	      <div class="header">
-	      	<a class="group">Product Name</a>
+	      	<a class="group" href="product/3">Product Name</a>
 	      </div>
 	      <div class="meta">
 	        Category
@@ -105,7 +118,7 @@
 	    </div>
 	    <div class="content">
 	      <div class="header">
-	      	<a class="group">Product Name</a>
+	      	<a class="group" href="product/4">Product Name</a>
 	      </div>
 	      <div class="meta">
 	        Category

@@ -154,7 +154,7 @@ body {
 .section {
   padding-top: 20px;
   padding-bottom: 20px;
-  min-height: 100px;
+  min-height: 30px;
   text-align: center;
 }
 .section.one {
