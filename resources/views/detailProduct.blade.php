@@ -3,20 +3,29 @@
 @section('content')
 <!-- Content area -->
 <div class="ui container content">
-	<div class="ui column">
-		
-		<div class="ui breadcrumb">
-	  		<a class="section" href="/product">Products</a>
-	  		<i class="right chevron icon divider"></i>
-	  		<div class="active section">Shoe 1</div>
-		</div>
+	<div class="ui column list">
+		<div class="item">
+		    <div class="right floated content">
+		    	<div class="ui action input">
+				  <input type="text" class="ui teal" placeholder="Search product...">
+				  <button class="ui teal button">Search</button>
+				</div>
+		    </div>
+			<div class="content">
+		      	<div class="ui breadcrumb">
+		      		<a class="section" href="/product">Products</a>
+		      		<i class="right chevron icon divider"></i>
+			  		<div class="active section">Shoe 1</div>
+				</div>
+		    </div>
+  		</div>
 	</div>
 
 	<div class="ui stackable two column grid">
 	  <div class="six wide column">
 
 		<div class="ui segment">
-			<a class="ui orange ribbon label">Image</a>
+			<a class="ui orange ribbon label">Product Image</a>
 	  		<div class="ui computer only grid" style="height: 350px;margin: 5px">
 				<img id='mainimg' class="ui fluid image" src="../img/shoe.jpg">
 			</div>

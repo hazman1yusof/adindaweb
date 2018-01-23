@@ -19,7 +19,7 @@
 <div class="ui top fixed menu">
 	<div class="center menu">
 		<a href="/home" class="item {{(Request::is('home') ? 'active' : '')}} item">Home</a>
-		<a href="/product" class="item {{(Request::is('product' || 'product/*') ? 'active' : '')}} item">Shop</a>
+		<a href="/product" class="item @if(Request::is('product') || Request::is('product/*')) {{'active'}} @endif item">Shop</a>
 		<a href="/home" class="item logo" style="padding: 5px">
 			@if (Request::is('product/*'))
 				<img class="ui medium rounded image" src="../img/logo shit.jpg" style="width: 5em;">

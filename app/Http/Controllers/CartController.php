@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
 
-class ProductController extends Controller
+class CartController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,14 +22,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $products = Product::paginate(16);
-
-        return view('productList',compact('products'));
-    }
-
-    public function showDetail()
     {
-        return view('detailProduct');
+        return view('cart');
     }
 }
