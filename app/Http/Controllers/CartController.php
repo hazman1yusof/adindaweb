@@ -25,4 +25,9 @@ class CartController extends Controller
     {
         return view('cart');
     }
+
+    public function detail(Request $request)
+    {
+        return $request;
+    }
 }

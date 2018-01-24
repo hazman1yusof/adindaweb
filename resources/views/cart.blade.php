@@ -137,5 +137,5 @@
 @endsection
 
 @section('js')
-	<script src="js/portfolio.js"></script>
+	<script src="js/cart.js"></script>
 @endsection
