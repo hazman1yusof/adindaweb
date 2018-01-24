@@ -90,7 +90,7 @@
 				<p>
 					<div class="ui right labeled input">
 					  <div class="ui blue label"><a><i class="minus icon"></i></a></div>
-					  <input type="text" placeholder="Amount" id="amount" value="1">
+					  <input type="text" placeholder="Amount" id="item_quan" value="1">
 					  <div class="ui blue label"><a><i class="plus icon"></i></a></div>
 					</div>
 				</p>

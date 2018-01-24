@@ -31,8 +31,14 @@ class CartController extends Controller
     public function detail(Request $request)
     {      
         $cart = array();
-        
-        foreach (DB::table('product')->whereIn('idno',$request->cart)->get() as $key => $obj) {
+        $quantity_arr = array_pluck($request->cart, 'quan');
+        $idno_arr = array_pluck($request->cart, 'idno');
+
+        foreach (DB::table('product')->whereIn('idno',$idno_arr)->get() as $key => $obj) {
+            $key_arr = array_search($obj->idno, $idno_arr);
+            $quantity = $quantity_arr[$key_arr];
+
+            $obj->quantity =$quantity;
             $obj->image = Product::find($obj->idno)->first_image()->first()->image_url;
             $cart[$key] = $obj;
         }

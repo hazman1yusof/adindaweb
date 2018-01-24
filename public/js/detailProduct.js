@@ -12,11 +12,15 @@ $(document).ready(function() {
 
 		obj = (obj==null)?[]:obj;
 		if(!obj.includes(item_id)){
-			obj.push({'idno':item_id,'quan':1});
+			obj.push({'idno':item_id,'quan':$('#item_quan').val()});
 			localStorage.setObj('adinda_cart', obj);
 		}
 
 		set_topbar_cart_len();
+	});
+
+	$('#').click(function(){
+
 	});
 
 });
