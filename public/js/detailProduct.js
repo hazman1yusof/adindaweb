@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 		obj = (obj==null)?[]:obj;
 		if(!obj.includes(item_id)){
-			obj.push(item_id);
+			obj.push({'idno':item_id,'quan':1});
 			localStorage.setObj('adinda_cart', obj);
 		}
 
