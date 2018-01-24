@@ -15,7 +15,7 @@ class CreateProductImagesTable extends Migration
     {
         Schema::create('product_images', function (Blueprint $table) {
             $table->increments('idno');
-            $table->string('itemcode',20)->nullable();
+            $table->integer('product_id')->unsigned()->nullable();
             $table->string('image_url',20)->nullable();
 
              /////////////////basic kena ada setiap table///////////////
@@ -26,6 +26,9 @@ class CreateProductImagesTable extends Migration
             $table->string('deluser',22)->nullable();
             $table->dateTime('deldate')->nullable();
             $table->string('recstatus',10)->nullable();
+
+            //////////////foreign key kalu rajin//////////////////////
+            $table->foreign('product_id')->references('idno')->on('product');
         });
     }
 

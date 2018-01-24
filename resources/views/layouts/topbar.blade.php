@@ -34,7 +34,7 @@
 	<span id="cart">
 		<a class="ui icon button teal" href="/cart">
 			<i class="big cart icon"></i>
-			<div class="floating circular ui red label">2</div>
+			<div class="floating circular ui red label" id="cart_length">0</div>
 		</a>
 	</span>
 </div>

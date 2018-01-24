@@ -7,11 +7,11 @@
 	      </div>
 	    </div>
 	  </div>
-	  <img src="img/shoe.jpg">
+	  <img src="img/{{$product->images()->first()->image_url}}.jpg" style="min-height: 176px">
 	</div>
 	<div class="content">
 	  <div class="header">
-	  	<a class="group" href="product/1">{{$product->itemname}}</a>
+	  	<a class="group" href="product/{{$product->idno}}">{{$product->itemname}}</a>
 	  </div>
 	  <div class="meta">
 	    Category

@@ -30,11 +30,13 @@
 		<script src="../assets/Semantic_latest/semantic.min.js"></script>
 		<script src="../js/owl.carousel.js"></script>
 		<script src="../js/main.js"></script>
+		<script src="../js/myjs.js"></script>
 	@else
 		<script src="js/jquery.min.js"></script>
 		<script src="assets/Semantic_latest/semantic.min.js"></script>
 		<script src="js/owl.carousel.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/myjs.js"></script>
 	@endif
 
 	@yield('js')

@@ -44,6 +44,8 @@ class CreateProductTable extends Migration
             $table->string('deluser',22)->nullable();
             $table->dateTime('deldate')->nullable();
             $table->string('recstatus',10)->nullable();
+
+
         });
     }
 

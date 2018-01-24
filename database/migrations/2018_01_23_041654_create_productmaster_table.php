@@ -33,9 +33,6 @@ class CreateProductmasterTable extends Migration
             $table->dateTime('deldate')->nullable();
             $table->string('recstatus',10)->nullable();
 
-
-            //////////////////index////////////////////
-
         });
     }
 
