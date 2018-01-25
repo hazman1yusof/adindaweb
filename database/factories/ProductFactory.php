@@ -9,7 +9,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'itemcode' => $faker->bothify('???######'),
         'itemname' => $faker->text($maxNbChars = 20),
         'description' => $faker->paragraphs($nb = 3, $asText = true) , // secret
-        'currprice' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) ,
+        'currprice' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 1000) ,
         'qtyonhand' => $faker->numberBetween($min = 1, $max = 99) ,
         'uomcode' => $faker->bothify('???######'),
         'groupcode' => $faker->bothify('???######'),

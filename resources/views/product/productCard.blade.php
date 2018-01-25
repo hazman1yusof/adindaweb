@@ -1,12 +1,5 @@
-<div class="ui raised link card">
+<div class="ui raised link {{array_random(['red','violet','olive','green','blue','orange','teal','purple','pink','brown','grey','black'])}} card">
 	<div class="image">
-	  <div class="ui blurring inverted dimmer">
-	    <div class="content">
-	      <div class="center">
-	        <div class="ui teal button">Add Friend</div>
-	      </div>
-	    </div>
-	  </div>
 	  <img src="img/{{$product->images()->first()->image_url}}.jpg" style="min-height: 176px">
 	</div>
 	<div class="content">
@@ -18,10 +11,13 @@
 	  </div>
 	  <div class="description">{{str_limit($product->description,200,' ...')}}</div>
 	</div>
-	<div class="extra content">
-	  <div class="ui star rating" data-rating="3"></div>
+	<div class="extra content inverted">
+	  <span class="left floated">
+	      <i class="dollar icon teal"></i>
+	      <a>Price :</a><span class="price">{{$product->currprice}}</span>
+	  </span>
 	  <span class="right floated">
-	      <i class="inbox icon"></i>
+	      <i class="inbox icon teal"></i>
 	      <a>Stock :</a>{{$product->qtyonhand}}
 	  </span>
 	</div>
