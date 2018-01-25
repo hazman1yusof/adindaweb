@@ -32,10 +32,10 @@
 
 	  	<div class="ui divider"></div>
 
-		<p class="price">Item Price: RM 4000</p>
-	    <p class="price">Shipping Price:  RM 500</p>
+		<p>Item Price: RM <span id="items_price">-</span></p>
+	    <p>Shipping Price: RM <span id="shipping_price">500</span></p>
 
-		<div class="ui button">Grand Amount: 4500</div>
+		<div class="ui button">Grand Amount: <span id="grand_amount">-</span></div>
 
 
 	    <div class="ui list right floated content">

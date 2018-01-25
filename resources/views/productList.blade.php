@@ -28,5 +28,5 @@
 @endsection
 
 @section('js')
-	<script src="js/portfolio.js"></script>
+	
 @endsection

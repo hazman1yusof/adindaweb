@@ -84,19 +84,21 @@
 				<div class="ui right floated header mini star rating" data-rating="3"></div>
 				<div class="ui clearing divider"></div>
 				<p>
-					<b>Price: </b>RM 400.00<br>
+					<b>Price: </b>RM {{$product->currprice}}<br>
 					<b>Shipping: </b>Free<br>
+					<b>Stock: </b><span id='qtyonhand'>{{$product->qtyonhand}}</span><br>
 				</p>
 				<p>
 					<div class="ui right labeled input">
 					  <div class="ui blue label"><a><i class="minus icon"></i></a></div>
-					  <input type="text" placeholder="Amount" id="item_quan" value="1">
+					  <input type="text" placeholder="Amount" id="item_quan" value="1" class="text_quan">
 					  <div class="ui blue label"><a><i class="plus icon"></i></a></div>
 					</div>
 				</p>
 				<div class="ui item">
 					<button class="fluid ui green button" id="addToCart" data-item_id='{{$product->idno}}' >Add to Cart</button>
 				</div>
+
 			</div>
 			
 		  </div>

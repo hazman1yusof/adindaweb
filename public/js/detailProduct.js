@@ -9,9 +9,11 @@ $(document).ready(function() {
 	$('#addToCart').click(function(){
 		let item_id = $(this).data('item_id');
 		let obj = localStorage.getObj('adinda_cart');
-
 		obj = (obj==null)?[]:obj;
-		if(!obj.includes(item_id)){
+
+		let idno_arr = obj.pluck('idno');
+
+		if(!idno_arr.includes(item_id)){
 			obj.push({'idno':item_id,'quan':$('#item_quan').val()});
 			localStorage.setObj('adinda_cart', obj);
 		}
@@ -19,8 +21,15 @@ $(document).ready(function() {
 		set_topbar_cart_len();
 	});
 
-	$('#').click(function(){
+	$('i.minus.icon').on('click',onMinus);
 
-	});
+	$('i.plus.icon').on('click',onPlus);
 
+	$('#addToCart')
+	  .popup({
+	  	on : 'click', 
+	    position : 'top center',
+	    title    : 'Thank You',
+	    content  : 'Item are added to the cart!'
+	  })
 });
