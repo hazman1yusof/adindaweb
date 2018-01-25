@@ -6,14 +6,17 @@
 	<div class="ui column list">
 		<div class="item">
 		    <div class="right floated content">
-		    	<div class="ui action input">
-				  <input type="text" class="ui teal" placeholder="Search product...">
-				  <button class="ui teal button">Search</button>
-				</div>
+		    	@include('layouts.search_breadcrumb')
 		    </div>
 			<div class="content">
 		      	<div class="ui breadcrumb">
-			  		<div class="active section">Products</div>
+		      		@if(Request::get('productname')!="")
+		      			<a class="section" href="/product">Products</a>
+			      		<i class="right chevron icon divider"></i>
+				  		<div class="active section">Search Keyword: {{Request::get('productname')}}</div>
+		      		@else
+						<div class="active section">Products</div>
+		      		@endif
 				</div>
 		    </div>
   		</div>
@@ -24,9 +27,49 @@
 			@include('product.productCard')
 		@endforeach
 	</div>
+
+	<div class="ui basic center aligned segment">
+		@if ($products->lastPage() > 1)
+		    <div class="ui pagination menu">
+		    	<a href="{{ $products->url(1) }}" class="{{ ($products->currentPage() == 1) ? ' disabled' : '' }} icon item">
+		            <i class="angle double left icon"></i>
+		        </a>
+		        <a href="{{ $products->previousPageUrl() }}" class="{{ ($products->currentPage() == 1) ? ' disabled' : '' }} icon item">
+		            <i class="angle left icon"></i>
+		        </a>
+		        @if ($products->currentPage() < $products->lastPage() && $products->currentPage() != 1)
+			        @for ($i = $products->currentPage()-1; $i <= $products->currentPage()+2; $i++)
+			            <a href="{{ $products->url($i) }}" class="{{ ($products->currentPage() == $i) ? ' active' : '' }} item">
+			                {{ $i }}
+			            </a>
+			        @endfor
+			    @elseif ($products->currentPage() >= $products->lastPage())
+			    	@for ($i = $products->currentPage()-3; $i <= $products->currentPage(); $i++)
+			            <a href="{{ $products->url($i) }}" class="{{ ($products->currentPage() == $i) ? ' active' : '' }} item">
+			                {{ $i }}
+			            </a>
+			        @endfor
+			    @else
+			    	@for ($i = $products->currentPage(); $i <= $products->currentPage()+3; $i++)
+			            <a href="{{ $products->url($i) }}" class="{{ ($products->currentPage() == $i) ? ' active' : '' }} item">
+			                {{ $i }}
+			            </a>
+			        @endfor
+			    @endif
+
+		        <a href="{{ $products->nextPageUrl() }}" class="{{ ($products->currentPage() == $products->lastPage()) ? ' disabled' : '' }} icon item">
+		            <i class="angle right icon"></i>
+		        </a>
+		        <a href="{{ $products->url($products->lastPage()) }}" class="{{ ($products->currentPage() == $products->lastPage()) ? ' disabled' : '' }} icon item">
+		            <i class="angle double right icon"></i>
+		        </a>
+		    </div>
+		@endif
+	</div>
+	
 </div>
 @endsection
 
 @section('js')
-	
+	<script src="../js/product.js"></script>
 @endsection

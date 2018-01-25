@@ -3,14 +3,10 @@
 @section('content')
 <!-- Content area -->
 <div class="ui container content">
-
 	<div class="ui column list">
 		<div class="item">
 		    <div class="right floated content">
-		    	<div class="ui action input">
-				  <input type="text" class="ui teal" placeholder="Search product...">
-				  <button class="ui teal button">Search</button>
-				</div>
+		    	@include('layouts.search_breadcrumb')
 		    </div>
 			<div class="content">
 		      	<div class="ui breadcrumb">

@@ -22,9 +22,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {   
-        $products = Product::paginate(16);
+        $products = new Product;
+        if(!empty($request->productname)){
+            $products = $products->where('itemname','like','%'.$request->productname.'%');
+        }
+        // dd($products->toSql());
+        // dd($products->getBindings());
+        $products = $products->paginate(16);
+
 
         return view('productList',compact('products'));
     }
