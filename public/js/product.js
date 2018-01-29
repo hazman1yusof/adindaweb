@@ -13,8 +13,19 @@ $(document).ready(function() {
 		$('#multi-select')
 			.dropdown();
 	}
+
+	// $(document).keypress(function(e) {
+	//     if(e.which == 13) {
+	//         alert('You pressed enter!');
+	//     }
+	// });
 	
-	$('#search').bind("enterKey",searching);
+	$('#productname').keypress(function(e) {
+	    if(e.which == 13) {
+	    	e.preventDefault();
+	        searching();
+	    }
+	});
 	$('#search').on('click',searching)
 
 	function searching(){

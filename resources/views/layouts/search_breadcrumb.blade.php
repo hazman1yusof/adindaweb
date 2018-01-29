@@ -10,7 +10,7 @@
 		</div>
 		<div class="field">
 			<div class="ui action input">
-				<input type="text" class="ui teal" name="productname" placeholder="Search product...">
+				<input type="text" class="ui teal" name="productname" placeholder="Search product..." id="productname">
 				<button class="ui teal button" id="search" type="button">Search</button>
 			</div>
 		</div>

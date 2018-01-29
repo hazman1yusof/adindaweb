@@ -26,3 +26,4 @@ Route::get('/product', 'ProductController@index');
 Route::get('/product/{product}', 'ProductController@showDetail');
 Route::get('/cart', 'CartController@index');
 Route::get('/cart_detail', 'CartController@detail');
+Route::get('/shipping', 'ShippingController@index');

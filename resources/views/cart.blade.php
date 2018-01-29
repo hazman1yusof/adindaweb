@@ -37,7 +37,7 @@
 			<div class="ui buttons">
 			  <a class="ui button" href="/product">Continue Shopping</a>
 			  <div class="or"></div>
-			  <a class="ui positive button" href="/checkout">Check Out</a>
+			  <a class="ui positive button" href="/shipping">Check Out</a>
 			</div>
 		</div>
 	</div>
