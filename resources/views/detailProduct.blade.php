@@ -3,20 +3,19 @@
 @section('content')
 <!-- Content area -->
 <div class="ui container content">
-	<div class="ui column list">
-		<div class="item">
-		    <div class="right floated content">
-		    	@include('layouts.search_breadcrumb')
-		    </div>
-			<div class="content">
-		      	<div class="ui breadcrumb">
-		      		<a class="section" href="/product">Products</a>
-		      		<i class="right chevron icon divider"></i>
-			  		<div class="active section">{{$product->itemname}}</div>
-				</div>
-		    </div>
-  		</div>
+	<div class="ui grid">
+		<div class="four wide column">
+	      	<div class="ui breadcrumb">
+	      		<a class="section" href="/product">Products</a>
+	      		<i class="right chevron icon divider"></i>
+		  		<div class="active section">{{$product->itemname}}</div>
+			</div>
+	    </div>
+	    <div class="twelve wide column">
+	    	@include('layouts.search_breadcrumb')
+	    </div>
 	</div>
+
 
 	<div class="ui stackable two column grid">
 	  <div class="six wide column">
@@ -59,8 +58,8 @@
 			</div>
 			<div class="ui bottom attached header">
 				<div class="ui tag labels">
-				  <a class="ui label">
-				    Shoe Category
+				  <a class="ui purple label">
+				    {{$product->category()->description}}
 				  </a>
 				  <a class="ui label">
 				    Discount

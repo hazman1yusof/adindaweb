@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use DB;
 
 class ProductController extends Controller
 {
@@ -24,20 +25,26 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {   
+        // dd($request->productcat);
         $products = new Product;
         if(!empty($request->productname)){
             $products = $products->where('itemname','like','%'.$request->productname.'%');
         }
+        if(!empty($request->productcat)){
+            $products = $products->whereIn('productcat',$request->productcat);
+        }
         // dd($products->toSql());
         // dd($products->getBindings());
         $products = $products->paginate(16);
+        $categories_desc = DB::table('category')->select('catcode','description')->get();
 
 
-        return view('productList',compact('products'));
+        return view('productList',compact('products','categories_desc'));
     }
 
     public function showDetail(Product $product)
     {
-        return view('detailProduct',compact('product'));
+        $categories_desc = DB::table('category')->select('catcode','description')->get();
+        return view('detailProduct',compact('product','categories_desc'));
     }
 }

@@ -1,5 +1,14 @@
 $(document).ready(function() {
 	$(".rating").rating();
+	$('#multi-select').dropdown();
+	$('#search').click(function(){
+		let urlParam = {
+			productcat:$("#multi-select").dropdown("get value"),
+			productname:$("input[name='productname']").val()
+		}
+		window.location.href = "/product?"+$.param(urlParam);
+	})
+
 
 	var adinda_cart = localStorage.getObj('adinda_cart');
 

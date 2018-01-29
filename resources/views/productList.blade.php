@@ -3,23 +3,21 @@
 @section('content')
 <!-- Content area -->
 <div class="ui container content">
-	<div class="ui column list">
-		<div class="item">
-		    <div class="right floated content">
-		    	@include('layouts.search_breadcrumb')
-		    </div>
-			<div class="content">
-		      	<div class="ui breadcrumb">
-		      		@if(Request::get('productname')!="")
-		      			<a class="section" href="/product">Products</a>
-			      		<i class="right chevron icon divider"></i>
-				  		<div class="active section">Search Keyword: {{Request::get('productname')}}</div>
-		      		@else
-						<div class="active section">Products</div>
-		      		@endif
-				</div>
-		    </div>
-  		</div>
+	<div class="ui grid">
+		<div class="four wide column">
+	      	<div class="ui breadcrumb">
+	      		@if(Request::get('productname')!="")
+	      			<a class="section" href="/product">Products</a>
+		      		<i class="right chevron icon divider"></i>
+			  		<div class="active section">Search Keyword: {{Request::get('productname')}}</div>
+	      		@else
+					<div class="active section">Products</div>
+	      		@endif
+			</div>
+	    </div>
+	    <div class="twelve wide column">
+	    	@include('layouts.search_breadcrumb')
+	    </div>
 	</div>
 
 	<div class="ui four item stackable cards">

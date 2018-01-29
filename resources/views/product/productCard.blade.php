@@ -7,7 +7,7 @@
 	  	<a class="group" href="product/{{$product->idno}}">{{$product->itemname}}</a>
 	  </div>
 	  <div class="meta">
-	    Category
+	    {{$product->category()->description}}
 	  </div>
 	  <div class="description">{{str_limit($product->description,200,' ...')}}</div>
 	</div>

@@ -3,17 +3,15 @@
 @section('content')
 <!-- Content area -->
 <div class="ui container content">
-	<div class="ui column list">
-		<div class="item">
-		    <div class="right floated content">
-		    	@include('layouts.search_breadcrumb')
-		    </div>
-			<div class="content">
-		      	<div class="ui breadcrumb">
-			  		<div class="active section">Cart</div>
-				</div>
-		    </div>
-  		</div>
+	<div class="ui grid">
+		<div class="four wide column">
+	      	<div class="ui breadcrumb">
+			  	<div class="active section">Cart</div>
+			</div>
+	    </div>
+	    <div class="twelve wide column">
+	    	@include('layouts.search_breadcrumb')
+	    </div>
 	</div>
 
 	<div class="ui items segment" id="cartSegment">

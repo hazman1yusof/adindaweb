@@ -25,7 +25,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('cart');
+        $categories_desc = DB::table('category')->select('catcode','description')->get();
+        return view('cart',compact('categories_desc'));
     }
 
     public function detail(Request $request)

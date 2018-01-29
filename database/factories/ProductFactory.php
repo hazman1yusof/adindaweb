@@ -13,7 +13,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'qtyonhand' => $faker->numberBetween($min = 1, $max = 99) ,
         'uomcode' => $faker->bothify('???######'),
         'groupcode' => $faker->bothify('???######'),
-        'productcat' => $faker->bothify('???######'),
+        'productcat' => $faker->randomElement($array = array ('cat1','cat2','cat3','cat4','cat5')),
         'adduser' => 'farid',
         'adddate' => $faker->dateTime($max = 'now', $timezone = 'Asia/Kuala_Lumpur')
     ];
