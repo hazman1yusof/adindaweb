@@ -4,13 +4,13 @@
 <!-- Content area -->
 <div class="ui container content">
 	<div class="ui three top attached steps">
-	  <div class="step">
+	  <a class="completed step" href="/shipping">
 	    <i class="truck icon"></i>
 	    <div class="content">
 	      <div class="title">Shipping</div>
 	      <div class="description">Key in Shipping Information</div>
 	    </div>
-	  </div>
+	  </a>
 	  <div class="active step">
 	    <i class="info icon"></i>
 	    <div class="content">
@@ -18,13 +18,13 @@
 	      <div class="description">Confirm Order</div>
 	    </div>
 	  </div>
-	  <div class="disabled step">
+	  <a class="disabled step">
 	    <i class="payment icon"></i>
 	    <div class="content">
 	      <div class="title">Payment</div>
 	      <div class="description">Make Payment</div>
 	    </div>
-	  </div>
+	  </a>
 	</div>
 
 

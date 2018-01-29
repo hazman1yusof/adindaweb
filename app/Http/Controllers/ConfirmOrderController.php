@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ShippingController extends Controller
+class ConfirmOrderController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +23,6 @@ class ShippingController extends Controller
      */
     public function index()
     {
-        return view('shipping');
+        return view('confirmOrder');
     }
 }

@@ -128,7 +128,7 @@
 		  </div>
 
 
-		  <div class="ui button" tabindex="0">Continue</div>
+		  <a class="ui button" tabindex="0" href="/confirm_order">Continue</a>
 		</form>
 	</div>
 
