@@ -18,31 +18,31 @@
 
 
 	<div class="ui stackable two column grid">
-	  <div class="six wide column">
+		  <div class="six wide column">
 
-		<div class="ui segment">
-			<a class="ui orange ribbon label">Product Image</a>
-	  		<div class="ui computer only grid" style="height: 350px;margin: 5px">
-				<img id='mainimg' class="ui fluid image" src="../img/{{$product->images()->first()->image_url}}.jpg">
-			</div>
+			<div class="ui segment">
+				<a class="ui red ribbon label">Product Image</a>
+		  		<div class="ui computer only grid" style="height: 350px;margin: 5px">
+					<img id='mainimg' class="ui fluid image" src="../img/{{$product->images()->first()->image_url}}.jpg">
+				</div>
 
-			<div class="ui divider"></div>
+				<div class="ui divider"></div>
 
-			<div class="ui centered stackable">
-				<div class="ten wide column">
-					<div class="owl-carousel" id="multiple-slider">
-						@foreach ($product->images()->get() as $image)
-					    	<div class="item"><a href="#"><img src="../img/{{$image->image_url}}.jpg"></a></div>
-						@endforeach
+				<div class="ui centered stackable">
+					<div class="ten wide column">
+						<div class="owl-carousel" id="multiple-slider">
+							@foreach ($product->images()->get() as $image)
+						    	<div class="item"><a href="#"><img src="../img/{{$image->image_url}}.jpg"></a></div>
+							@endforeach
+						</div>
 					</div>
 				</div>
-			</div>
+			</div>  
 		</div>
-	  </div>
 
 		<div class="ui stackable ten wide column">
 			
-		  <div class="sixteen wide column">
+		  <div class="row">
 
 			<div class="ui top attached segment">
 				<a class="ui red ribbon label">Product Overview</a>
@@ -58,7 +58,7 @@
 			</div>
 			<div class="ui bottom attached header">
 				<div class="ui tag labels">
-				  <a class="ui purple label">
+				  <a class="ui label">
 				    {{$product->category()->description}}
 				  </a>
 				  <a class="ui label">
@@ -75,7 +75,7 @@
 
 		  </div>
 
-		  <div class="ui segment">
+		  <div class="ui top attached segment">
 				<a class="ui red ribbon label">Buy Product</a>
 				<div class="ui right floated header mini star rating" data-rating="3"></div>
 				<div class="ui clearing divider"></div>
@@ -86,16 +86,13 @@
 				</p>
 				<p>
 					<div class="ui right labeled input">
-					  <div class="ui blue label"><a><i class="minus icon"></i></a></div>
+					  <div class="ui teal label"><a><i class="minus icon"></i></a></div>
 					  <input type="text" placeholder="Amount" id="item_quan" value="1" class="text_quan">
-					  <div class="ui blue label"><a><i class="plus icon"></i></a></div>
+					  <div class="ui teal label"><a><i class="plus icon"></i></a></div>
 					</div>
 				</p>
-				<div class="ui item">
-					<button class="fluid ui green button" id="addToCart" data-item_id='{{$product->idno}}' >Add to Cart</button>
-				</div>
-
 			</div>
+			<div class="ui teal bottom attached button" id="addToCart" data-item_id='{{$product->idno}}' >Add to Cart</div>
 			
 		  </div>
 

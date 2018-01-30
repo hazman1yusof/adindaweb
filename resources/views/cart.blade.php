@@ -16,13 +16,13 @@
 
 	<div class="ui items segment" id="cartSegment">
 
-	  <a class="ui orange ribbon label">Shopping Cart</a>
+	  <a class="ui red ribbon label">Shopping Cart</a>
 
 	  
 	</div>
 
 	<div class="ui clearing segment">
-	  	<a class="ui orange ribbon label">Order Summary</a>
+	  	<a class="ui red ribbon label">Order Summary</a>
 
 	  	<div class="ui divider"></div>
 
@@ -37,7 +37,7 @@
 			<div class="ui buttons">
 			  <a class="ui button" href="/product">Continue Shopping</a>
 			  <div class="or"></div>
-			  <a class="ui positive button" href="/shipping">Check Out</a>
+			  <a class="ui positive button" href="/shipping">Check Out<i class="right chevron icon"></i></a>
 			</div>
 		</div>
 	</div>

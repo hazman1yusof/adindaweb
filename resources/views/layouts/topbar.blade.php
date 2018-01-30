@@ -19,7 +19,7 @@
 <div class="ui top fixed menu">
 	<div class="center menu">
 		<a href="/home" class="item {{(Request::is('home') ? 'active' : '')}} item">Home</a>
-		<a href="/product" class="item @if(Request::is('product') || Request::is('product/*')) {{'active'}} @endif item">Shop</a>
+		<a href="/product" class="item @if(Request::is('product') || Request::is('product/*') || Request::is('cart') || Request::is('shipping') || Request::is('confirm_order') || Request::is('payment')) {{'active'}} @endif item">Shop</a>
 		<a href="/home" class="item logo" style="padding: 5px">
 			@if (Request::is('product/*'))
 				<img class="ui medium rounded image" src="../img/logo shit.jpg" style="width: 5em;">
@@ -28,7 +28,7 @@
 			@endif
 		</a>
 		<a href="" class="icon item logo" id="trigger"><i class="sidebar icon"></i></a>
-		<a href="/blog" class="item {{(Request::is('blog') ? 'active' : '')}} item">Our Team</a>
+		<a href="/login" class="item {{(Request::is('login') ? 'active' : '')}} item">Log In</a>
 		<a href="/about" class="item {{(Request::is('about') ? 'active' : '')}} item">About</a>
 	</div>
 	<span id="cart">
