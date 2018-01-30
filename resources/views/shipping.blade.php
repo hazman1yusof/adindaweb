@@ -72,7 +72,7 @@
 
 		    <div class="field">
 		      <label>Province</label>
-		      <select class="ui fluid dropdown" placeholder="province">
+		      <select class="ui fluid dropdown" name="province" id="province">
 		      	<option value="38" selected="selected">Wp Kuala Lumpur</option>
 		      	<option value="25">Johor</option>
 		      	<option value="26">Kedah</option>
