@@ -38,8 +38,8 @@ $(document).ready(function() {
     });
 
 	/* Responsive Event */
-	var navbarMenu = $('.fixed.top.menu .center.menu').clone();
-	$('.vertical.menu.collapse').html(navbarMenu);
+	// var navbarMenu = $('.fixed.top.menu .center.menu').clone();
+	// $('.vertical.menu.collapse').html(navbarMenu);
 
 	$('#trigger').click(function(e) {
 		e.preventDefault();
@@ -82,6 +82,13 @@ $(document).ready(function() {
 	        }
 	    }
 	});
+
+	$('#authuser')
+		.dropdown({
+			onChange: function(value, text, $selectedItem) {
+				window.location.href = $selectedItem.attr('href');
+			}
+		});
 
 	
 });

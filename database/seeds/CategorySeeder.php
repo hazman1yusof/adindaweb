@@ -11,7 +11,6 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-
     	App\Category::truncate();
         factory(App\Category::class, 5)->create();
     }
