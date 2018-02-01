@@ -23,6 +23,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/about', 'AboutController@index');
 Route::get('/login', 'SessionController@index');
 Route::post('/login', 'SessionController@login');
+Route::get('/signup', 'SessionController@signup');
 Route::get('/logout','SessionController@destroy');
 Route::get('/product', 'ProductController@index');
 Route::get('/product/{product}', 'ProductController@showDetail');

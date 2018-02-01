@@ -6,36 +6,41 @@
 	<div class="ui stackable doubling grid">
 		<!-- Middle Content -->
 		<div class="sixteen wide column">
-			<div class="ui horizontal divider"><h2>About</h2></div>
+			<div class="ui horizontal divider"><h3>ABOUT</h3></div>
 			<div align="center">
-				<div class="ui heart rating" data-rating="1" data-max-rating="3"></div>
-				<p><b>Moderns Template</b> adalah free template siap pakai yang saya buat untuk di pakai, di modifikasi, dan di share kepada siapapun tetapi dengan tetap menyertakan alamat dan pembuat asli dari template ini yaitu saya sendiri di dalam file index, license, atau lainnya. Semoga template ini dapat berguna untuk anda sekalian. Terima kasih karena telah menggunakan template ini.</p>
-				<blockquote><h3>"Berkarya, Bersama, Berjaya"</h3></blockquote>
+				<p>Kami menjual skincare 5 IN 1 yg dihasilkan drp bahan2semulajadi/alami.skincare kami adalah 100%selamat tanpa menggelupasan/kesan merah pd muka/pedih.set trial utk pengguna yg baru ingin mencuba produk kami.</p>
+				<p>Kami juga menjual LULUR ORGANIK PUTRI yg dihasilkan 100% drp bahan2 organik</p>
+				<p>Menjual skincare/lulur/scrub/jagaan wanita yg berasaskan bahan2 yg selamat,tiada kesan sampingan kpd pengguna</p>
 			</div>
 			<br>
-			<div class="ui horizontal divider">Sample History</div>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus ex error natus, harum ipsum nam id cumque ut quasi esse, sed, suscipit accusamus rem! Doloremque tenetur fugit, non nisi harum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quas, explicabo quasi itaque a odio beatae tenetur veritatis consectetur. Quos vero libero beatae ea. Repellat odio illum laboriosam consectetur aliquid.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolores, similique quis assumenda, et mollitia nobis repellat? Ad eaque sapiente eos reprehenderit placeat quaerat, consequuntur, atque omnis consequatur ullam quod?</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus ex error natus, harum ipsum nam id cumque ut quasi esse, sed, suscipit accusamus rem! Doloremque tenetur fugit, non nisi harum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quas, explicabo quasi itaque a odio beatae tenetur veritatis consectetur. Quos vero libero beatae ea. Repellat odio illum laboriosam consectetur aliquid.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolores, similique quis assumenda, et mollitia nobis repellat? Ad eaque sapiente eos reprehenderit placeat quaerat, consequuntur, atque omnis consequatur ullam quod?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus ex error natus, harum ipsum nam id cumque ut quasi esse, sed, suscipit accusamus rem! Doloremque tenetur fugit, non nisi harum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quas, explicabo quasi itaque a odio beatae tenetur veritatis consectetur. Quos vero libero beatae ea. Repellat odio illum laboriosam consectetur aliquid.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolores, similique quis assumenda, et mollitia nobis repellat? Ad eaque sapiente eos reprehenderit placeat quaerat, consequuntur, atque omnis consequatur ullam quod?</p>
-			<br>
-			<div class="ui horizontal divider">Our Client</div>
-			<!-- Slider Container -->
-			<div class="ui container">
-				<div class="ui centered stackable doubling grid">
-					<div class="eight wide column">
-						<div class="owl-carousel" id="multiple-slider">
-						    <div class="item"><img src="assets/img/400x400.png"></div>
-						    <div class="item"><img src="assets/img/400x400.png"></div>
-						    <div class="item"><img src="assets/img/400x400.png"></div>
-						    <div class="item"><img src="assets/img/400x400.png"></div>
-						    <div class="item"><img src="assets/img/400x400.png"></div>
-						    <div class="item"><img src="assets/img/400x400.png"></div>
-						    <div class="item"><img src="assets/img/400x400.png"></div>
-						    <div class="item"><img src="assets/img/400x400.png"></div>
-						    <div class="item"><img src="assets/img/400x400.png"></div>
-						    <div class="item"><img src="assets/img/400x400.png"></div>
+			<div class="ui horizontal divider"><h3>CONTACT INFO</h3></div>
+			<div align="center">
+				<div class="ui grid stackable">
+					<div class="ui column six wide">
+						<div class="ui segment">
+
+							<p><i class="call icon"></i> Call 011-1977 0783</p>
+							<p><i class="mail icon"></i> penmerahpenbiru@gmail.com</p>
+							<p><i class="map icon"></i></p>
+							Adinda Beauty<br>
+							No. 62-G, Jalan Nelayan B 19/B, Seksyen 19, Selangor<br>
+							Seksyen 19<br>
+							40200 Shah Alam<br>
+							Selangor, Malaysia<br>
+						</div>
+					</div>
+					<div class="ui column ten wide">
+						<div class="ui column six wide">
+							<div class="ui segment" id="map" style="height: 500px;">
+								
+							</div>
 						</div>
 					</div>
 				</div>
+				
 			</div>
+			<br>
+			
 		</div>
 	</div>
 </div>
@@ -43,4 +48,40 @@
 
 @section('js')
 	<script src="js/about.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJc51mvQYeix8FZ1LsQCPWcwW091jH05o"></script>
+    <script>
+      // In the following example, markers appear when the user clicks on the map.
+      // Each marker is labeled with a single alphabetical character.
+      var labels = 'AdindaBeauty';
+      var labelIndex = 0;
+
+      function initialize() {
+        var adinda = {lat: 3.049549, lng: 101.533839};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: adinda
+        });
+
+        // This event listener calls addMarker() when the map is clicked.
+        google.maps.event.addListener(map, 'click', function(event) {
+          addMarker(event.latLng, map);
+        });
+
+        // Add a marker at the center of the map.
+        addMarker(adinda, map);
+      }
+
+      // Adds a marker to the map.
+      function addMarker(location, map) {
+        // Add the marker at the clicked location, and add the next-available label
+        // from the array of alphabetical characters.
+        var marker = new google.maps.Marker({
+          position: location,
+          label: labels[labelIndex++ % labels.length],
+          map: map
+        });
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 @endsection

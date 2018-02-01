@@ -73,22 +73,22 @@
 		    <div class="field">
 		      <label>Province</label>
 		      <select class="ui fluid dropdown" name="province" id="province">
-		      	<option value="38" selected="selected">Wp Kuala Lumpur</option>
-		      	<option value="25">Johor</option>
-		      	<option value="26">Kedah</option>
-		      	<option value="27">Kelantan</option>
-		      	<option value="28">Melaka</option>
-		      	<option value="29">Negeri Sembilan</option>
-		      	<option value="30">Pahang</option>
-		      	<option value="1217">Penang</option>
-		      	<option value="32">Perak</option>
-		      	<option value="33">Perlis</option>
-		      	<option value="36">Sabah</option>
-		      	<option value="37">Sarawak</option>
-		      	<option value="34">Selangor</option>
-		      	<option value="35">Terengganu</option>
-		      	<option value="39">Wp Labuan</option>
-		      	<option value="40">Wp Putrajaya</option>
+		      	<option value="1" selected="selected">Wp Kuala Lumpur</option>
+		      	<option value="2">Johor</option>
+		      	<option value="3">Kedah</option>
+		      	<option value="4">Kelantan</option>
+		      	<option value="5">Melaka</option>
+		      	<option value="6">Negeri Sembilan</option>
+		      	<option value="7">Pahang</option>
+		      	<option value="8">Penang</option>
+		      	<option value="9">Perak</option>
+		      	<option value="10">Perlis</option>
+		      	<option value="11">Sabah</option>
+		      	<option value="12">Sarawak</option>
+		      	<option value="13">Selangor</option>
+		      	<option value="14">Terengganu</option>
+		      	<option value="15">Wp Labuan</option>
+		      	<option value="16">Wp Putrajaya</option>
 		      </select>
 		    </div>
 

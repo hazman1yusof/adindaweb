@@ -48,10 +48,10 @@ $(document).ready(function() {
 
 	/* First Slider */
 	$('#single-slider').owlCarousel({
+		autoplay:false,
 	    loop:true,
 	    margin:10,
 	    nav:false,
-	    autoplay:true,
 	    responsive:{
 	        0:{
 	            items:1

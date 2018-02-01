@@ -32,6 +32,11 @@ class SessionController extends Controller
         return view('login');
     }
 
+    public function signup()
+    {
+        return view('signup');
+    }
+
     public function login(Request $request)
     {   
         if(!empty($request->admin)){
