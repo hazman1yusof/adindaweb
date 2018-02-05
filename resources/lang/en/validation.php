@@ -116,6 +116,18 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'username' => 'User Name',
+        'email' => 'E-Mail',
+        'password' => 'Password',
+        're_password' => 'Retype Password',
+        'f_name' => 'First Name',
+        'l_name' => 'Last Name',
+        'address' => 'Address',
+        'postcode' => 'Post Code',
+        'city' => 'City',
+        'province' => 'Provinced',
+        'mobile_nm' => 'Mobile Number'
+    ],
 
 ];

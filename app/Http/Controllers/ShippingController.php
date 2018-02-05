@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class ShippingController extends Controller
      */
     public function __construct()
     {
-        
+
     }
 
     /**
@@ -22,7 +23,11 @@ class ShippingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('shipping');
+    {   
+        $user = [];
+        if(Auth::check()){
+            $user = Auth::user();
+        }
+        return view('shipping',compact('user'));
     }
 }

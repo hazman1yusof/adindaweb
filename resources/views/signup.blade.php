@@ -6,30 +6,41 @@
 <div class="ui container content">
 	<div class="ui centered grid">
 		<div class="sixteen wide column">
-			<form class="ui form">
+			@if ($errors->any())
+			    <div class="ui error message">
+    				<div class="header">Error, Please correct this</div>
+			        <ul>
+			            @foreach ($errors->all() as $error)
+			                <li>{{ $error }}</li>
+			            @endforeach
+			        </ul>
+			    </div>
+			@endif
+			<form class="ui form" method="POST" action="\signup">
+				{{ csrf_field() }}
 				<h4 class="ui dividing header">Login Information</h4>
 
 				  <div class="two fields">
 				  	  <div class="field">
 					    <label>User Name</label>
-						<input type="text" name="f_name" placeholder="User Name">
+						<input type="text" name="username" placeholder="User Name">
 				      </div>
 
 				      <div class="field">
 					    <label>Email</label>
-						<input type="email" name="f_name" placeholder="Email">
+						<input type="email" name="email" placeholder="Email">
 				      </div>
 				  </div>
 
 				  <div class="two fields">
 				  	  <div class="field">
 					    <label>Password</label>
-						<input type="password" name="f_name" placeholder="Password">
+						<input type="password" name="password" placeholder="Password">
 				      </div>
 
 				      <div class="field">
 					    <label>Re-type Password</label>
-						<input type="password" name="f_name" placeholder="Retype Password">
+						<input type="password" name="re_password" placeholder="Retype Password">
 				      </div>
 				  </div>
 
@@ -103,7 +114,7 @@
 						</div>
 			      </div>
 
-				  <a class="ui button" tabindex="0" href="/confirm_order">Sign Up</a>
+				  <button class="ui button">Sign Up</button>
 			</form>
 		</div>
 	</div>
@@ -111,5 +122,5 @@
 @endsection
 
 @section('js')
-	<script src="js/login.js"></script>
+	<script src="js/signup.js"></script>
 @endsection
