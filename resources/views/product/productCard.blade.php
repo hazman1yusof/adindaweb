@@ -1,5 +1,10 @@
 <div class="ui raised link {{array_random(['red','violet','olive','green','blue','orange','teal','purple','pink','brown','grey','black'])}} card">
 	<div class="image">
+	  @if (array_has($favourites,$product->idno))
+		  <div class="ui red left corner label">
+	        <i class="heart icon"></i>
+	      </div>
+      @endif
 	  <img src="img/{{$product->images()->first()->image_url}}.jpg" style="min-height: 176px">
 	</div>
 	<div class="content">
@@ -9,12 +14,19 @@
 	  <div class="meta">
 	    {{$product->category()->description}}
 	  </div>
-	  <div class="description">{{str_limit($product->description,200,' ...')}}</div>
+	  <div class="description">
+	  	<p>{{str_limit($product->description,200,' ...')}}</p>
+	  	<p>
+	      <i class="dollar icon teal"></i>
+	      <b>Price :</b>
+	      	<span class="price wavy-strike">{{$product->currprice}}</span>&nbsp;&nbsp;
+	      	<span class="price">{{$product->currprice-$product->currprice*$product->discount/100}}</span>
+	    </p>
+	  </div>
 	</div>
 	<div class="extra content inverted">
 	  <span class="left floated">
-	      <i class="dollar icon teal"></i>
-	      <a>Price :</a><span class="price">{{$product->currprice}}</span>
+	      <div class="ui star rating" data-rating="{{$product->rating}}" data-max-rating="5"></div>
 	  </span>
 	  <span class="right floated">
 	      <i class="inbox icon teal"></i>
