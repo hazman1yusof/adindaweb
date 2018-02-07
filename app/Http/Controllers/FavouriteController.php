@@ -32,9 +32,17 @@ class FavouriteController extends Controller
 
     public function store(Request $request){
         $product = Product::find($request->idno);
-        $rate = intval($request->newrate);
-        $oldrate = intval($product->rating);
-        $newrate = round(($oldrate+$rate)/2);
-        $product = $product->update(['rating' => $newrate]);
+        $user = Auth::user();
+
+
+        if(DB::table('favourites')->where('user_id',$user->idno)->where('product_id',$product->idno)->first()){
+            DB::table('favourites')->where('user_id',$user->idno)->where('product_id',$product->idno)->delete();
+        }else{
+            DB::table('favourites')->insert([
+                'user_id' => $user->idno,
+                'product_id' => $product->idno,
+                'adddate' => now()
+            ]);
+        }
     }
 }

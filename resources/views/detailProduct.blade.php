@@ -59,7 +59,12 @@
 				<div class="ui divider"></div>
 					@if(Auth::check())
 						&nbsp;&nbsp;
-						<b>Favourite</b> <div class="ui heart rating" data-rating="0" data-max-rating="1" id="favourite" data-content="Added to Favourite"></div>
+						<b>Favourite</b>
+						@if($fave)
+							<div class="ui heart rating" data-rating="1" data-max-rating="1" id="favourite" data-content="Delete From Favourite"></div>
+						@else
+							<div class="ui heart rating" data-rating="0" data-max-rating="1" id="favourite" data-content="Added to Favourite"></div>
+						@endif
 						&nbsp;&nbsp;
 						<b>Rate</b> <div class="ui star rating" data-rating="{{$product->rating}}" data-max-rating="5" id="rate" data-content="Thank you for rate!"></div>
 					@endif

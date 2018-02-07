@@ -34,5 +34,5 @@ Route::get('/shipping', 'ShippingController@index');
 Route::get('/confirm_order', 'ConfirmOrderController@index');
 Route::get('/payment', 'PaymentController@index');
 Route::get('/favourite', 'FavouriteController@index');
-Route::post('/favourite', 'ProductController@store');
+Route::post('/favourite', 'FavouriteController@store');
 Route::post('/save_rate', 'ProductController@save_rate');

@@ -51,8 +51,14 @@ class ProductController extends Controller
 
     public function showDetail(Product $product)
     {
+        $fave=false;
+        if(Auth::check()){
+            if(DB::table('favourites')->where('user_id',Auth::user()->idno)->where('product_id',$product->idno)->first()){
+                $fave=true;
+            }
+        }
         $categories_desc = DB::table('category')->select('catcode','description')->get();
-        return view('detailProduct',compact('product','categories_desc'));
+        return view('detailProduct',compact('product','categories_desc','fave'));
     }
 
     public function save_rate(Request $request){

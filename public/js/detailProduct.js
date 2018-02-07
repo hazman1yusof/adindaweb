@@ -35,7 +35,7 @@ $(document).ready(function() {
 		let fave = $(this).rating('get rating');
 		$(this).rating('disable');
 		$('#favourite').off();
-		$.post( "/favourite",{"_token": $('#token').val(),"idno": $('#idno').val(),"fave": fav}, function(data) {
+		$.post( "/favourite",{"_token": $('#token').val(),"idno": $('#idno').val(),"fave": fave}, function(data) {
 			
 		});
 	});
