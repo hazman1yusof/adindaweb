@@ -23,6 +23,8 @@ class CreateProductTable extends Migration
             $table->string('groupcode',20)->nullable();
             $table->string('productcat',20)->nullable();
             $table->string('suppcode',20)->nullable();
+            $table->smallInteger('discount')->nullable();
+            $table->smallInteger('rating')->nullable();
             $table->decimal('avgcost',15,2)->nullable();
             $table->decimal('actavgcost',15,2)->nullable();
             $table->decimal('currprice',15,2)->nullable();

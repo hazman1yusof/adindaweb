@@ -19,8 +19,12 @@
 	  	<p>
 	      <i class="dollar icon teal"></i>
 	      <b>Price :</b>
-	      	<span class="price wavy-strike">{{$product->currprice}}</span>&nbsp;&nbsp;
-	      	<span class="price">{{$product->currprice-$product->currprice*$product->discount/100}}</span>
+	      	@if(Auth::check())
+		      	<span class="price wavy-strike">{{$product->currprice}}</span>&nbsp;&nbsp;
+		      	<span class="price">{{$product->currprice-$product->currprice*$product->discount/100}}</span>
+		    @else
+		      	<span class="price">{{$product->currprice}}</span>
+		    @endif
 	    </p>
 	  </div>
 	</div>

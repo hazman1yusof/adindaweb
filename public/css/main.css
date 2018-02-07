@@ -217,3 +217,8 @@ body {
   font-size: large;
   width: 80px;
 }
+.wavy-strike {
+  text-decoration: line-through;
+  text-decoration-color: red !important;
+  text-decoration-style: solid !important;
+}

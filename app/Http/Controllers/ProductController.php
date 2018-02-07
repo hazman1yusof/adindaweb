@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use DB;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -25,26 +26,40 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {   
-        // dd($request->productcat);
         $products = new Product;
+        $favourites = [];
+
         if(!empty($request->productname)){
             $products = $products->where('itemname','like','%'.$request->productname.'%');
         }
         if(!empty($request->productcat)){
             $products = $products->whereIn('productcat',$request->productcat);
         }
-        // dd($products->toSql());
-        // dd($products->getBindings());
+        if(Auth::check()){
+            $user = Auth::user();
+
+            foreach ($user->favourites()->get() as $key => $value) {
+                $favourites = array_add($favourites, $value->product_id, Product::find($value->product_id));
+            }
+        }
+
         $products = $products->paginate(16);
         $categories_desc = DB::table('category')->select('catcode','description')->get();
 
-
-        return view('productList',compact('products','categories_desc'));
+        return view('productList',compact('products','categories_desc','favourites'));
     }
 
     public function showDetail(Product $product)
     {
         $categories_desc = DB::table('category')->select('catcode','description')->get();
         return view('detailProduct',compact('product','categories_desc'));
+    }
+
+    public function save_rate(Request $request){
+        $product = Product::find($request->idno);
+        $rate = intval($request->newrate);
+        $oldrate = intval($product->rating);
+        $newrate = round(($oldrate+$rate)/2);
+        $product = $product->update(['rating' => $newrate]);
     }
 }

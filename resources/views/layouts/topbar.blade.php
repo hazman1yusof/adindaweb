@@ -29,7 +29,7 @@
 		</a>
 		<a href="" class="icon item logo" id="trigger"><i class="sidebar icon"></i></a>
 		@if (Auth::check())
-			<a id="authuser" class="ui dropdown {{(Request::is('login') ? 'active' : '')}} item">{{session('username')}}
+			<a id="authuser" class="ui dropdown {{(Request::is('login') ? 'active' : '')}} item">{{Auth::user()->username}}
 				<div class="menu">
 			      <div class="item" href="/myaccount">My Account</div>
 			      <div class="item" href="/favourite">Favourite</div>

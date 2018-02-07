@@ -3,6 +3,8 @@
 @section('content')
 <!-- Content area -->
 <div class="ui container content">
+	<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+	<input type="hidden" name="idno" id="idno" value="{{ $product->idno }}">
 	<div class="ui grid">
 		<div class="four wide column">
 	      	<div class="ui breadcrumb">
@@ -54,7 +56,13 @@
 				<p>
 					{{$product->description}}
 				</p>
-
+				<div class="ui divider"></div>
+					@if(Auth::check())
+						&nbsp;&nbsp;
+						<b>Favourite</b> <div class="ui heart rating" data-rating="0" data-max-rating="1" id="favourite" data-content="Added to Favourite"></div>
+						&nbsp;&nbsp;
+						<b>Rate</b> <div class="ui star rating" data-rating="{{$product->rating}}" data-max-rating="5" id="rate" data-content="Thank you for rate!"></div>
+					@endif
 			</div>
 			<div class="ui bottom attached header">
 				<div class="ui tag labels">
@@ -77,10 +85,17 @@
 
 		  <div class="ui top attached segment">
 				<a class="ui red ribbon label">Buy Product</a>
-				<div class="ui right floated header mini star rating" data-rating="3"></div>
+				<div class="right floated header ui star rating" data-rating="{{$product->rating}}" data-max-rating="5"></div>
 				<div class="ui clearing divider"></div>
 				<p>
-					<b>Price: </b>RM {{$product->currprice}}<br>
+					@if(Auth::check())
+						<b>Price: </b>
+				      	<span class="price wavy-strike">{{$product->currprice}}</span>&nbsp;&nbsp;
+				      	<span class="price">{{$product->currprice-$product->currprice*$product->discount/100}}</span><br>
+				      	<b>Membership Discount: </b> {{$product->discount}}%<br>
+				    @else
+						<b>Price: </b>RM {{$product->currprice}}<br>
+				    @endif
 					<b>Shipping: </b>Free<br>
 					<b>Stock: </b><span id='qtyonhand'>{{$product->qtyonhand}}</span><br>
 				</p>

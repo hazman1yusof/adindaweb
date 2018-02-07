@@ -24,7 +24,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'city' => $faker->city,
         'province' => $faker->state,
         'mobile_nm' => $faker->numerify('###########'),
-        'password' => 'rahsia', // secret
+        'password' => bcrypt('rahsia'),
         'remember_token' => str_random(10),
     ];
 });

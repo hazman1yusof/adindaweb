@@ -3,7 +3,7 @@ $(document).ready(function() {
 		let price = $(this).text();
 		$(this).text("RM "+numeral(price).format('0,0.00'));
 	});
-
+	
 	$('.ui.rating').rating('disable');
 
 	if(location.search.substr(1) != ""){

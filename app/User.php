@@ -12,4 +12,8 @@ class User extends Authenticatable
     protected $primaryKey = 'idno';
     protected $table = 'users';
     protected $guarded = [];
+
+    public function favourites(){
+	    return $this->hasMany(Favourite::class, 'user_id');
+	}
 }

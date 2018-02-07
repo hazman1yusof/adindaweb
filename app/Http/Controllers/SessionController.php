@@ -83,14 +83,7 @@ class SessionController extends Controller
             $user = new User;
             $admin = 'no';
         }
-        $user =  $user->where('username',request('username'))
-                    ->where('password',request('password'))
-                    ->where('email',request('email'))
-                    ->first();
-        if($user){
-            Auth::login($user);
-            $request->session()->put('admin', $admin);
-            $request->session()->put('username', request('username'));
+        if (Auth::attempt(['username' => request('username'), 'password' => request('password')], request('remember'))) {
             return redirect('/product');
         }else{
             return back();
@@ -98,6 +91,7 @@ class SessionController extends Controller
     }
 
     public function destroy(){
+        Auth::logout();
         Session::flush();
         return redirect('/login');
     }

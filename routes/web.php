@@ -19,9 +19,9 @@ Auth::routes();
 
 
 Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');;
 Route::get('/about', 'AboutController@index');
-Route::get('/login', 'SessionController@index');
+Route::get('/login', 'SessionController@index')->name('login');
 Route::post('/login', 'SessionController@login');
 Route::get('/signup', 'SessionController@show_signup');
 Route::post('/signup', 'SessionController@signup');
@@ -33,3 +33,6 @@ Route::get('/cart_detail', 'CartController@detail');
 Route::get('/shipping', 'ShippingController@index');
 Route::get('/confirm_order', 'ConfirmOrderController@index');
 Route::get('/payment', 'PaymentController@index');
+Route::get('/favourite', 'FavouriteController@index');
+Route::post('/favourite', 'ProductController@store');
+Route::post('/save_rate', 'ProductController@save_rate');
