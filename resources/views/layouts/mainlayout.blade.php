@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Moderns Template</title>
+	<title>Adinda Web</title>
 	@if (Request::is('product/*'))
 		<link rel="stylesheet" type="text/css" href="../assets/Semantic_latest/semantic.min.css">
 		<link rel="stylesheet" type="text/css" href="../css/owl.carousel.css">
